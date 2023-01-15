@@ -11,7 +11,7 @@ object ProductMapper {
         name = productRemoteEntity.name,
         type = productRemoteEntity.type,
         value = productRemoteEntity.value.toString(),
-        dateCreate = productRemoteEntity.date_create,
-        dateUpdate = productRemoteEntity.date_update
+        dateCreate = productRemoteEntity.dateCreate,
+        dateUpdate = productRemoteEntity.dateUpdate
     )
 }

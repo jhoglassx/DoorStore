@@ -1,5 +1,6 @@
 package com.jgenesis.doorstore.data.remote.entity
 
+import com.google.gson.annotations.SerializedName
 import java.math.BigDecimal
 
 data class ProductRemoteEntity(
@@ -7,6 +8,8 @@ data class ProductRemoteEntity(
     val name: String,
     val type: String,
     val value: BigDecimal,
-    val date_create: String,
-    val date_update: String
+    @SerializedName("date_create")
+    val dateCreate: String,
+    @SerializedName("date_update")
+    val dateUpdate: String
 )

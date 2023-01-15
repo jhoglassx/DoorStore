@@ -11,7 +11,17 @@ import dagger.hilt.components.SingletonComponent
 object DaoModule {
 
     @Provides
-    fun provideProductDao(
-        database: Database
-    ) = database.getProductDao()
+    fun provideProductDao(database: Database) = database.getProductDao()
+
+    @Provides
+    fun provideClientDao(database: Database) = database.getClientDao()
+
+    @Provides
+    fun provideSellDao(database: Database) = database.getSellDao()
+
+    @Provides
+    fun provideBuyDao(database: Database) = database.getBuyDao()
+
+    @Provides
+    fun provideSellProduct(database: Database) = database.getSellProduct()
 }

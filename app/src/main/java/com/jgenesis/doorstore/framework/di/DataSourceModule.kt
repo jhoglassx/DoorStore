@@ -1,7 +1,6 @@
 package com.jgenesis.doorstore.framework.di
 
-import com.jgenesis.doorstore.data.local.datasource.LocalDataSource
-import com.jgenesis.doorstore.data.local.datasource.LocalDataSourceImpl
+import com.jgenesis.doorstore.data.local.datasource.*
 import com.jgenesis.doorstore.data.remote.datasource.RemoteDataSource
 import com.jgenesis.doorstore.data.remote.datasource.RemoteDataSourceImpl
 import dagger.Binds
@@ -19,7 +18,28 @@ interface DataSourceModule {
     ): RemoteDataSource
 
     @Binds
-    fun bindLocalDataSource(
-        localDataSource: LocalDataSourceImpl
-    ): LocalDataSource
+    fun bindProductLocalDataSource(
+        productLocalDataSource: ProductLocalDataSourceImpl
+    ): ProductLocalDataSource
+
+    @Binds
+    fun bindClientLocalDataSource(
+        clientLocalDataSource: ClientLocalDataSourceImpl
+    ): ClientLocalDataSource
+
+    @Binds
+    fun bindSellLocalDataSource(
+        sellLocalDataSource: SellLocalDataSourceImpl
+    ): SellLocalDataSource
+
+    @Binds
+    fun bindBuyLocalDataSource(
+        buyLocalDataSource: BuyLocalDataSourceImpl
+    ): BuyLocalDataSource
+
+    @Binds
+    fun bindSellProductLocalDataSource(
+        sellProductLocalDataSource: SellProductLocalDataSourceImpl
+    ): SellProductLocalDataSource
 }
+

@@ -1,9 +1,15 @@
 package com.jgenesis.doorstore.data.local.entity
 
 import androidx.room.ColumnInfo
+import androidx.room.Entity
 import androidx.room.PrimaryKey
 
+@Entity(
+    tableName = "client"
+)
 data class ClientLocalEntity(
+
+    @ColumnInfo(name = "id")
     @PrimaryKey
     val id: Int,
 
