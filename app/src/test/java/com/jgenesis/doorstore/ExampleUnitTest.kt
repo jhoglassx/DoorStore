@@ -1,4 +1,4 @@
-package com.example.doorstore
+package com.jgenesis.doorstore
 
 import org.junit.Test
 
