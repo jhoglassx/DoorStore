@@ -1,4 +1,4 @@
-package com.example.doorstore.ui.theme
+package com.jgenesis.doorstore.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

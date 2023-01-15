@@ -1,4 +1,4 @@
-package com.example.doorstore.ui.theme
+package com.jgenesis.doorstore.ui.theme
 
 import android.app.Activity
 import android.os.Build
