@@ -7,6 +7,6 @@ data class ProductRemoteEntity(
     val name: String,
     val type: String,
     val value: BigDecimal,
-    val dateCreate: String,
-    val dateUpdate: String
+    val date_create: String,
+    val date_update: String
 )
