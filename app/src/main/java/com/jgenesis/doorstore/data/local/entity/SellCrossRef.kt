@@ -18,5 +18,5 @@ data class SellCrossRef(
         entityColumn = "sell_id",
         entity = SellProductLocalEntity::class
     )
-    val products: List<SellProductLocalEntity>
+    val products: List<ProductCrossRef>
 )

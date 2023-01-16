@@ -3,6 +3,7 @@ package com.jgenesis.doorstore.data.repository
 import android.util.Log
 import com.jgenesis.doorstore.data.local.datasource.*
 import com.jgenesis.doorstore.data.local.entity.*
+import com.jgenesis.doorstore.data.mappers.SalesMapper
 import com.jgenesis.doorstore.data.remote.datasource.RemoteDataSource
 import javax.inject.Inject
 
@@ -49,7 +50,7 @@ class RepositoryImpl @Inject constructor(
         }
     }
 
-    override suspend fun getSellAll() = sellLocalDataSource.getSellAll()
+    override suspend fun getSellAll() = SalesMapper.localToDomain(sellLocalDataSource.getSellAll())
 
     override suspend fun insertBuy(buyLocalEntity: BuyLocalEntity): Boolean {
         return try {

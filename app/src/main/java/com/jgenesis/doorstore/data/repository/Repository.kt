@@ -5,6 +5,7 @@ import com.jgenesis.doorstore.data.remote.entity.BuyRemoteEntity
 import com.jgenesis.doorstore.data.remote.entity.ClientRemoteEntity
 import com.jgenesis.doorstore.data.remote.entity.ProductRemoteEntity
 import com.jgenesis.doorstore.data.remote.entity.SellRemoteEntity
+import com.jgenesis.doorstore.domain.entity.SalesDomainEntity
 
 interface Repository {
 
@@ -16,7 +17,7 @@ interface Repository {
     suspend fun insertProduct(productLocalEntity: ProductLocalEntity): Boolean
     suspend fun insertClient(clientLocalEntity: ClientLocalEntity): Boolean
     suspend fun insertSell(sellLocalEntity: SellLocalEntity): Boolean
-    suspend fun getSellAll(): List<SellCrossRef>
+    suspend fun getSellAll(): List<SalesDomainEntity>
     suspend fun insertBuy(buyLocalEntity: BuyLocalEntity): Boolean
     suspend fun insertSellProduct(sellProductLocalEntity: SellProductLocalEntity): Boolean
 }

@@ -1,11 +1,15 @@
 package com.jgenesis.doorstore.ui.main
 
 import android.util.Log
+import androidx.compose.runtime.mutableStateListOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.jgenesis.doorstore.data.local.entity.SellCrossRef
 import com.jgenesis.doorstore.data.mappers.*
 import com.jgenesis.doorstore.data.repository.Repository
+import com.jgenesis.doorstore.domain.entity.SalesDomainEntity
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -13,6 +17,8 @@ import javax.inject.Inject
 class MainActivityViewModel @Inject constructor(
     private val repository: Repository
 ) : ViewModel() {
+
+    val sellsProducts = MutableStateFlow<MutableList<SalesDomainEntity>>(mutableStateListOf())
 
     fun load() {
         viewModelScope.launch {
@@ -46,9 +52,10 @@ class MainActivityViewModel @Inject constructor(
             }
 
             Log.i("LOAD SELL", "$sells")
-
-            val sellsCrossRef = repository.getSellAll()
-            Log.i("SELL", "$sellsCrossRef")
         }
+    }
+
+    fun getSells() = viewModelScope.launch {
+        sellsProducts.emit(repository.getSellAll() as MutableList<SalesDomainEntity>)
     }
 }
