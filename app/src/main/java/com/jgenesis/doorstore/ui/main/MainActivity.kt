@@ -90,8 +90,8 @@ class MainActivity : ComponentActivity() {
                             Divider(
                                 modifier = Modifier
                                     .padding(horizontal = 8.dp, vertical = 4.dp)
-                                    .height(4.dp),
-                                color = Color.LightGray
+                                    .height(2.dp),
+                                color = Color.Gray
                             )
                         }
                     }
@@ -101,7 +101,7 @@ class MainActivity : ComponentActivity() {
                         .layoutId("balance")
                 ) {
                     Column {
-                        TotalBottomCard(sales.sumOf { it.total }.toString())
+                        TotalBottomCard(sales.sumOf { it.total })
                     }
                 }
             }

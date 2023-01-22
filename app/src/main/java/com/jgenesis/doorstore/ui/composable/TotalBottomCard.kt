@@ -13,15 +13,17 @@ import androidx.compose.ui.layout.layoutId
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import java.math.BigDecimal
+import java.text.DecimalFormat
 
 @Preview(showBackground = true)
 @Composable
-fun TotalBottomCard(total: String = "00.00") {
+fun TotalBottomCard(total: BigDecimal = 00.00.toBigDecimal()) {
     Box(
         modifier = Modifier
             .layoutId("box")
             .fillMaxWidth()
-            .clip(RoundedCornerShape(5.dp, 5.dp, 0.dp, 0.dp))
+            .clip(RoundedCornerShape(8.dp, 8.dp, 0.dp, 0.dp))
             .background(color = Color.DarkGray)
             .padding(8.dp),
         contentAlignment = Alignment.CenterEnd
@@ -46,7 +48,7 @@ fun TotalBottomCard(total: String = "00.00") {
                 Text(
                     color = Color.White,
                     fontWeight = FontWeight.Bold,
-                    text = total
+                    text = total.toString()
                 )
             }
         }
