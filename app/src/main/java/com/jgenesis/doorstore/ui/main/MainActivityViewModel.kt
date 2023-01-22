@@ -4,7 +4,6 @@ import android.util.Log
 import androidx.compose.runtime.mutableStateListOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.jgenesis.doorstore.data.local.entity.SellCrossRef
 import com.jgenesis.doorstore.data.mappers.*
 import com.jgenesis.doorstore.data.repository.Repository
 import com.jgenesis.doorstore.domain.entity.SalesDomainEntity
